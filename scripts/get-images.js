@@ -42,7 +42,9 @@ function isImage(url) {
   let tokens = url.toLowerCase().split('.');
   let extension = tokens[tokens.length - 1];
 
-  return (extension == 'jpg' || extension == 'jpeg' || extension == 'png');
+  // get just the jpeg images since instagram api doesn't support png
+  // support could be added via imagemagick to transform before upload
+  return (extension == 'jpg' || extension == 'jpeg');
 }
 
 module.exports = getImages;
