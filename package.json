@@ -19,6 +19,7 @@
   "dependencies": {
     "get-json": "^1.0.0",
     "instagram-private-api": "^0.6.7",
+    "node-wget": "^0.4.2",
     "shelljs": "^0.7.8"
   }
 }
