@@ -24,19 +24,26 @@ function main() {
 
 
 function loginAndUpload(image) {
-  if (!image) return console.error('No image specified');
-  if (!username) return console.error('Please set the username in the ENV variables as HMMMBOT_USERNAME');
-  if (!password) return console.error('Please set the password in the ENV variables as HMMMBOT_PASSWORD');
+  if (!image) throw 'No image specified';
+  if (!username) throw 'Please set the username in the ENV variables as HMMMBOT_USERNAME';
+  if (!password) throw 'Please set the password in the ENV variables as HMMMBOT_PASSWORD';
 
-  login().then(function(session) {
-    session.getAccount()
-      .then(function (account) {
-        console.log(`Logged in as: ${account.params.fullName}`);
-        return upload(session, image);
-      }).then(function () {
-        console.log('Image uploaded!');
-      });
+  return new Promise(function(resolve, reject) {
+
+    login().then(function(session) {
+      session.getAccount()
+        .then(function (account) {
+          console.log(`Logged in as: ${account.params.fullName}`);
+          return upload(session, image);
+        }).then(function () {
+          console.log('Image uploaded!');
+          resolve(image);
+        }).catch(reject);
+    });
+    
   });
+
+
 }
 
 
