@@ -4,7 +4,7 @@ const path = require('path');
 const Instagram = require('instagram-private-api').V1;
 const device = new Instagram.Device('ig-upload');
 
-const tempFile = path.resolve('../tmp/cookies.json');
+const tempFile = path.resolve(__dirname, '../tmp/cookies.json');
 const storage = new Instagram.CookieFileStorage(tempFile);
 
 const username = process.env.HMMMBOT_USERNAME;
