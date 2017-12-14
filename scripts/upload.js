@@ -11,11 +11,19 @@ const username = process.env.HMMMBOT_USERNAME;
 const password = process.env.HMMMBOT_PASSWORD;
 
 
-init();
+main();
 
 
-function init() {
-  const image = process.argv[2];
+function main() {
+  // if running from the command line
+  if (require.main === module) {
+    const image = process.argv[2];
+    loginAndUpload(image);
+  }
+}
+
+
+function loginAndUpload(image) {
   if (!image) return console.error('No image specified');
   if (!username) return console.error('Please set the username in the ENV variables as HMMMBOT_USERNAME');
   if (!password) return console.error('Please set the password in the ENV variables as HMMMBOT_PASSWORD');
@@ -45,3 +53,5 @@ function upload(session, image) {
       return Instagram.Media.configurePhoto(session, upload.params.uploadId, '🤔');
     })
 }
+
+module.exports = loginAndUpload;
