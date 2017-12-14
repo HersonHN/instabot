@@ -19,7 +19,8 @@ function main() {
     checkDB()
       .then(getImages)
       .then(checkDuplicates)
-      .then(console.log);
+      .then(console.log)
+      .catch(console.error);
   }
 }
 
