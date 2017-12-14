@@ -18,6 +18,7 @@
   "homepage": "https://github.com/HersonHN/hmmmbot#readme",
   "dependencies": {
     "get-json": "^1.0.0",
-    "instagram-private-api": "^0.6.7"
+    "instagram-private-api": "^0.6.7",
+    "shelljs": "^0.7.8"
   }
 }
