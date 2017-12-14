@@ -4,21 +4,19 @@ const getJSON = require('get-json');
 const shell = require('shelljs');
 
 const config = require('../config.json');
-
-
 const DB = config.db;
+
 
 main();
 
 
 function main() {
-
   // if running from the command line
   if (require.main === module) {
     const getImages = require('./get-images');
     const checkDB = require('./check-db');
 
-    checkDuplicates()
+    checkDB()
       .then(getImages)
       .then(checkDuplicates)
       .then(console.log);

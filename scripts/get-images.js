@@ -47,4 +47,5 @@ function isImage(url) {
   return (extension == 'jpg' || extension == 'jpeg');
 }
 
+
 module.exports = getImages;
