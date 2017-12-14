@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/HersonHN/hmmmbot/issues"
   },
-  "homepage": "https://github.com/HersonHN/hmmmbot#readme"
+  "homepage": "https://github.com/HersonHN/hmmmbot#readme",
+  "dependencies": {
+    "instagram-private-api": "^0.6.7"
+  }
 }
