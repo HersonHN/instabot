@@ -1,0 +1,19 @@
+{
+  "name": "hmmmbot",
+  "version": "1.0.0",
+  "description": "instagram bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HersonHN/hmmmbot.git"
+  },
+  "author": "Herson Salinas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HersonHN/hmmmbot/issues"
+  },
+  "homepage": "https://github.com/HersonHN/hmmmbot#readme"
+}
