@@ -40,7 +40,7 @@ function loginAndUpload(image) {
           resolve(image);
         }).catch(reject);
     });
-    
+
   });
 
 
@@ -57,7 +57,7 @@ function upload(session, image) {
 
   return Instagram.Upload.photo(session, image)
     .then(function(upload) {
-      return Instagram.Media.configurePhoto(session, upload.params.uploadId, '🤔');
+      return Instagram.Media.configurePhoto(session, upload.params.uploadId, '#🤔 #hmmm #meme #dankmemes');
     })
 }
 

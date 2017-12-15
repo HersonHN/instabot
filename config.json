@@ -1,4 +1,4 @@
 {
-  "source": "https://www.reddit.com/r/hmmm/top.json?t=week",
+  "source": "https://www.reddit.com/r/hmmm/top.json?t=all&limit=200",
   "db": "~/uploaded-posts.txt"
 }
