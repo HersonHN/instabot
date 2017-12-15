@@ -13,8 +13,8 @@ main();
 function main() {
   // if running from the command line
   if (require.main === module) {
-    downloadImage('https://goo.gl/KudZVD')
-      .then(console.log);
+    const image = process.argv[2];
+    downloadImage(image).then(console.log);
   }
 }
 
