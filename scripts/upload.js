@@ -2,10 +2,13 @@
 const os = require('os');
 const path = require('path');
 const Instagram = require('instagram-private-api').V1;
-const device = new Instagram.Device('ig-upload');
+const config = require('../config.json');
+
 
 const tempFile = path.resolve(__dirname, '../tmp/cookies.json');
 const storage = new Instagram.CookieFileStorage(tempFile);
+const device = new Instagram.Device('ig-upload');
+
 
 const username = process.env.HMMMBOT_USERNAME;
 const password = process.env.HMMMBOT_PASSWORD;
@@ -42,8 +45,6 @@ function loginAndUpload(image) {
     });
 
   });
-
-
 }
 
 
@@ -57,7 +58,7 @@ function upload(session, image) {
 
   return Instagram.Upload.photo(session, image)
     .then(function(upload) {
-      return Instagram.Media.configurePhoto(session, upload.params.uploadId, '#🤔 #hmmm #meme #dankmemes');
+      return Instagram.Media.configurePhoto(session, upload.params.uploadId, config.hashtags);
     })
 }
 
