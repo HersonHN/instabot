@@ -16,4 +16,4 @@ Set these env variables to make it work:
 
 ## Roadmap
 
-[ ] Guive access to configure the hashtags in the account description, to easily change them without having to access the server to do so.
+[] Guive access to configure the hashtags in the account description, to easily change them without having to access the server to do so.
