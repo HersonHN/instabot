@@ -1,21 +1,21 @@
 {
-  "name": "hmmmbot",
+  "name": "instabot",
   "version": "1.0.0",
-  "description": "instagram bot",
+  "description": "Takes images from Reddit and post them to Instagram",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HersonHN/hmmmbot.git"
+    "url": "git+https://github.com/HersonHN/instabot.git"
   },
   "author": "Herson Salinas",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/HersonHN/hmmmbot/issues"
+    "url": "https://github.com/HersonHN/instabot/issues"
   },
-  "homepage": "https://github.com/HersonHN/hmmmbot#readme",
+  "homepage": "https://github.com/HersonHN/instabot#readme",
   "dependencies": {
     "get-json": "^1.0.1",
     "instagram-private-api": "https://github.com/dilame/instagram-private-api",

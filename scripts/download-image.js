@@ -1,7 +1,7 @@
 
 const Path = require('path');
 const wget = require('node-wget');
-const config = require('../config.json');
+const config = require('../config');
 
 // trailing slash is important for wget api
 const tmp = Path.resolve(__dirname, '../tmp') + '/';

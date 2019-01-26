@@ -1,6 +1,6 @@
 
 const getJSON = require('get-json');
-const config = require('../config.json');
+const config = require('../config');
 
 
 main();

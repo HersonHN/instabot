@@ -3,7 +3,7 @@ const Path = require('path');
 const getJSON = require('get-json');
 const shell = require('shelljs');
 
-const config = require('../config.json');
+const config = require('../config');
 const DB = config.db;
 
 

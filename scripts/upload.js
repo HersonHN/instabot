@@ -2,7 +2,7 @@
 const os = require('os');
 const path = require('path');
 const Instagram = require('instagram-private-api').V1;
-const config = require('../config.json');
+const config = require('../config');
 
 
 const tempFile = path.resolve(__dirname, '../tmp/cookies.json');
@@ -10,9 +10,8 @@ const storage = new Instagram.CookieFileStorage(tempFile);
 const device = new Instagram.Device('ig-upload');
 
 
-const username = process.env.HMMMBOT_USERNAME;
-const password = process.env.HMMMBOT_PASSWORD;
-
+const username = config.username;
+const password = config.password;
 
 main();
 
