@@ -4,7 +4,7 @@ InstaBot
 
 Takes images from Reddit and post them to Instagram.
 
-## Configuration:
+## Configuration
 
 Set these env variables to make it work:
 
@@ -14,3 +14,6 @@ Set these env variables to make it work:
 - `INSTABOT_HASHTAGS`: Hastags for description of each image.
 - `INSTABOT_DB`: A plaintext file to store the url of the already uploaded images, default is `~/uploaded-posts.txt`.
 
+## Roadmap
+
+[ ] Guive access to configure the hashtags in the account description, to easily change them without having to access the server to do so.
