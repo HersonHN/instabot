@@ -1,14 +1,11 @@
 
 const os = require('os');
 const path = require('path');
-const Instagram = require('instagram-private-api').V1;
 const config = require('../config');
+const Instagram = require('instagram-web-api');
 
 
 const tempFile = path.resolve(__dirname, '../tmp/cookies.json');
-const storage = new Instagram.CookieFileStorage(tempFile);
-const device = new Instagram.Device('ig-upload');
-
 
 const username = config.username;
 const password = config.password;
@@ -27,38 +24,35 @@ function main() {
 
 function loginAndUpload(image) {
   if (!image) throw 'No image specified';
-  if (!username) throw 'Please set the username in the ENV variables as HMMMBOT_USERNAME';
-  if (!password) throw 'Please set the password in the ENV variables as HMMMBOT_PASSWORD';
+  if (!username) throw 'Please set the username in the ENV variables as INSTABOT_USERNAME';
+  if (!password) throw 'Please set the password in the ENV variables as INSTABOT_PASSWORD';
 
-  return new Promise(function(resolve, reject) {
-
-    login().then(function(session) {
-      session.getAccount()
-        .then(function (account) {
-          console.log(`Logged in as: ${account.params.fullName}`);
-          return upload(session, image);
-        }).then(function () {
-          console.log('Image uploaded!');
-          resolve(image);
-        }).catch(reject);
-    });
-
-  });
+  return login()
+    .then(({ instance, info }) => {
+      console.log(`Logged in as: ${info.first_name} ${info.last_name}`);
+      return upload({ instance, image });
+    })
+    .catch(console.error)
 }
 
 
-function login() {
-  return Instagram.Session.create(device, storage, username, password)
+async function login() {
+  let instance = new Instagram({ username, password });
+  let client = await instance.login();
+  let info = await instance.getProfile();
+  return { instance, info };
 }
 
 
-function upload(session, image) {
+async function upload({ instance, image }) {
   image = path.resolve(image);
 
-  return Instagram.Upload.photo(session, image)
-    .then(function(upload) {
-      return Instagram.Media.configurePhoto(session, upload.params.uploadId, config.hashtags);
-    })
+  await instance.uploadPhoto({
+    photo: image,
+    caption: config.hashtags
+  });
+
+  return 'Image uploaded!';
 }
 
 module.exports = loginAndUpload;

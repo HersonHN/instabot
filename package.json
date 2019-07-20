@@ -18,7 +18,7 @@
   "homepage": "https://github.com/HersonHN/instabot#readme",
   "dependencies": {
     "get-json": "^1.0.1",
-    "instagram-private-api": "https://github.com/dilame/instagram-private-api",
+    "instagram-web-api": "https://github.com/jlobos/instagram-web-api.git",
     "node-wget": "^0.4.3",
     "shelljs": "^0.8.3"
   }
