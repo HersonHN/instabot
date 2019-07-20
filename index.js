@@ -7,11 +7,6 @@ const logDB = require('./scripts/log-db');
 const upload = require('./scripts/upload');
 const deleteFile = require('./scripts/delete-file');
 
-console.log(process.env.INSTABOT_USERNAME)
-console.log(process.env.INSTABOT_PASSWORD)
-console.log(process.env.INSTABOT_SOURCE)
-console.log(process.env.INSTABOT_HASHTAGS)
-
 checkDB()
   .then(getImages)
   .then(checkDuplicates)
