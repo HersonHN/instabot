@@ -27,8 +27,8 @@ function main() {
 
 function loginAndUpload(image) {
   if (!image) throw 'No image specified';
-  if (!username) throw 'Please set the username in the ENV variables as HMMMBOT_USERNAME';
-  if (!password) throw 'Please set the password in the ENV variables as HMMMBOT_PASSWORD';
+  if (!username) throw 'Please set the username in the ENV variables as INSTABOT_USERNAME';
+  if (!password) throw 'Please set the password in the ENV variables as INSTABOT_PASSWORD';
 
   return new Promise(function(resolve, reject) {
 
