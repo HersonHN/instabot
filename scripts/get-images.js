@@ -1,32 +1,30 @@
 
-const getJSON = require('get-json');
+const axios = require('axios');
 const config = require('../config');
 
 
 main();
 
 
-function main() {
+async function main() {
   // if running from the command line
   if (require.main === module) {
-    getImages().then(console.log);
+    let images = await getImages();
+    console.log(images);
   }
 }
 
 
-function getImages() {
-  return new Promise(function(resolve, reject) {
-    getJSON(config.source, function (error, content) {
-      if (error) return reject(error);
-      content = parseContent(content);
-      resolve(content);
-    });
-  })
+async function getImages() {
+  let response = await axios.get(config.source);
+  return parseContent(response.data);
 }
 
 
 function parseContent(content) {
-  let images = content.data.children.filter(postFilter).map(post => post.data.url);
+  let images = content.data.children
+    .filter(postFilter)
+    .map(post => post.data.url);
   return images;
 }
 

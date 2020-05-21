@@ -7,7 +7,7 @@ const DB = config.db;
 
 
 function logDB(url) {
-  shell.echo(url + '\n').toEnd(DB);
+  shell.echo(url).toEnd(DB);
   return Promise.resolve(url);
 }
 

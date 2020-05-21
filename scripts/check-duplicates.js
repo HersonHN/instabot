@@ -1,6 +1,4 @@
 
-const Path = require('path');
-const getJSON = require('get-json');
 const shell = require('shelljs');
 
 const config = require('../config');
@@ -16,7 +14,7 @@ function main() {
     const getImages = require('./get-images');
     const checkDB = require('./check-db');
 
-    checkDB()
+    let res = checkDB()
       .then(getImages)
       .then(checkDuplicates)
       .then(console.log)

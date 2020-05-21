@@ -108,3 +108,5 @@ Temporary Items
 
 tmp/*
 !tmp/.gitkeep
+
+run.sh
